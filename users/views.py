@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
+from .forms import CutstomUserCreationForm
 
-# Create your views here.
+
+class SignUpPageView(CreateView):
+    form_class = CutstomUserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/signup.html"
