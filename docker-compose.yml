@@ -8,6 +8,11 @@ services:
       - .:/code
     depends_on:
       - db
+    environment:
+      - DJANGO_DEBUG=True
+      - DJANGO_SECRET_KEY=dD0kzpvbnU-9Ae4ooShMBl5ES5Ci7gQp603Lu8glcfk
+
+
 
   db:
     image: postgres:latest
