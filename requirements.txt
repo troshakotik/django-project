@@ -22,3 +22,4 @@ python-dotenv==1.1.1
 sqlparse==0.5.3
 typing_extensions==4.14.0
 tzdata==2025.2
+django-allauth==65.9.0
