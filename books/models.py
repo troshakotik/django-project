@@ -18,6 +18,9 @@ class Book(models.Model):
         return reverse("book_detail", kwargs={"pk": self.pk})
 
     class Meta:
+        permissions = [
+            ("special_status", "Can read all books"),
+        ]
         verbose_name = "Книга"
         verbose_name_plural = "Книги"
 
