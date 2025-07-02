@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # Local
     "users",
     "pages",
+    "books",
 ]
 
 MIDDLEWARE = [
