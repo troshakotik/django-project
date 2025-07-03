@@ -11,6 +11,7 @@ services:
     environment:
       - DJANGO_DEBUG=True
       - DJANGO_SECRET_KEY=dD0kzpvbnU-9Ae4ooShMBl5ES5Ci7gQp603Lu8glcfk
+      - DJANGO_DB_URL=postgres://postgres:postgres@db:5432/postgres
 
 
 
