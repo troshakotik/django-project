@@ -12,10 +12,11 @@ class BookListView(LoginRequiredMixin, ListView):
 
 
 class BookDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
-    permission_required = "books.special_status"
     model = Book
+    permission_required = "books.special_status"
     template_name = "books/book_detail.html"
     context_object_name = "book"
+    queryset = Book.objects.prefetch_related("reviews__author")
 
 
 class SearchResultsListView(LoginRequiredMixin, ListView):
@@ -33,7 +34,6 @@ class SearchResultsListView(LoginRequiredMixin, ListView):
         query = self.request.GET.get("q")
         if query:
             filtered_books = self.get_filtered_books(query)
-            if filtered_books.exists():
-                return filtered_books
+            return filtered_books
 
         return Book.objects.none()
